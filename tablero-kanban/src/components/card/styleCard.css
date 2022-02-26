@@ -19,15 +19,19 @@
     flex-wrap: nowrap;
     align-items: center;
     width: 100%;
-    justify-content: space-around;
     padding-right: 1.5rem;
+    gap: 2rem;
+    margin-left: 2rem;
 
 }
 
+
+
+
+
 .pending_icon{
    width: 25px;
-   height: 25px;
-   image-color: darkgreen;
+   height: 25px;    
    margin: 10px;
 }
 
