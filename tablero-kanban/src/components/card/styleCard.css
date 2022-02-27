@@ -1,0 +1,43 @@
+.card_container{
+    display: flex;
+    flex-direction: column;
+    width: 450px;
+    height: auto;
+    border-radius: 5px;
+    border: 1px solid rgba(27,31,35,0.15);
+    padding: 10px 30px 10px 0px;
+    align-items: center;
+    color: darkgrey;
+    margin: 1rem;
+    position: relative;
+    background-color: white;
+}
+
+.card_title{
+    color: #0366d6;
+    display: flex;
+    flex-wrap: nowrap;
+    align-items: center;
+    width: 100%;
+    padding-right: 1.5rem;
+    gap: 2rem;
+    margin-left: 2rem;
+
+}
+
+
+
+
+
+.pending_icon{
+   width: 25px;
+   height: 25px;    
+   margin: 10px;
+}
+
+.delete {
+    position: absolute;
+    right: 1rem;
+    padding: 1rem;
+}
+

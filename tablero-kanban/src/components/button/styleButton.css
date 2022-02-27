@@ -1,0 +1,43 @@
+.button{
+    border: none;
+    background-color: #f6f8fa;
+    margin-left: 380px;
+    margin-top: 30px;
+}
+
+.text_area{
+    width: 400px;
+    height: 100px;
+    border-radius: 5px;
+    font-size: 1.3rem;
+    padding-left: 0.5rem;
+    margin: 1rem;
+    
+    
+}
+
+.button_text_area{
+    width: 190px;
+    height: 40px;
+    border-radius: 5px;
+    background-color: #2ea44f;
+    border: none;
+    margin-left: 1rem;
+   
+   
+}
+
+.add_button{
+    background-color: #2ea44f;
+    color: white;
+    
+}
+.cancel_button{
+    background-color:  #fafbfc;
+    border: 1px solid rgba(27,31,35,0.15);
+
+}
+
+.add_button-disabled{
+    opacity: 0.7;
+}
