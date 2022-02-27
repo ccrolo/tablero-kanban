@@ -1,13 +1,15 @@
 import React from 'react';
 import './App.css';
 import Landing from './pages/landing/indexLanding';
-
+import { CardsProvider } from './components/context/indexContext';
 
 
 function App() {
   return (
     <React.Fragment>
-      <Landing></Landing>
+      <CardsProvider>
+        <Landing></Landing>
+      </CardsProvider>
     </React.Fragment>
   )
 }
