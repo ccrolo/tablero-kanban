@@ -1,30 +1,39 @@
 import './styleCard.css'
 import pending from '../../assets/icono-verde.png'
-import { useState } from 'react'
-import { useEffect } from 'react';
-
+import { useContext, useState } from 'react';
+import CardsContext from '../context/indexContext'
 
 
 
 function Card(props) {
+    const { cardsState, updateCardsState } = useContext(CardsContext);
+    let [arrayId, arrayIdUpdate] = useState(cardsState.map( e => e.id))
+      
+   
 
-    // let [IntroduceText, IntroduceTextUpdate] = useState('');
+    const handleDelete = () => {
+       
+        const position = arrayId.indexOf(props.id)
+        updateCardsState(cardsState.splice(position, 1))
 
+        console.log(cardsState)
 
-    // useEffect(() => {
-    //     IntroduceTextUpdate(localStorage.getItem('text'))
-    // }, [])
-    // console.log(IntroduceText)
+       
+        
+
+       /*  updateCardsState(cardsState.splice(position,1))
+        arrayIdUpdate(arrayId.splice(position,1)) */
+    }
 
     return (
 
         <div className="card_container">
             <div className='card_title'>
                 <img className='pending_icon' src={pending} alt="imagen de pending" />
-                
+
                 <h4 >{props.task}</h4>
-                <p className='delete'>🗑️</p>
-                
+                <button onClick={handleDelete} className='delete'>🗑️</button>
+
             </div>
             <p>#23 created on 30/7/2022 8:34:54</p>
         </div>

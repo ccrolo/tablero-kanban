@@ -13,7 +13,8 @@ function Button() {
     
     let [isChecked, isCheckedUpdate] = useState(false)
     let [isDisabled, isDisabledUpdate] = useState(true)
-    // localStorage.setItem('arrayTasks',arrayTasks);
+    let [ counter, counterUpdate] = useState([])
+    
     
     const handle = () => {
         isCheckedUpdate(true)
@@ -26,13 +27,14 @@ function Button() {
 
     const handleSubmit = e => {
         e.preventDefault()
+       
         let obj = {
-            text: e.target.textarea.value
+            text: e.target.textarea.value,
+            id: counter.length + 1
         }
+        counterUpdate(e => e+1)
+       /*  console.log(counter.length) */
         updateCardsState([...cardsState,obj])
-        // console.log(cardsState)
-        
-        // localStorage.setItem('card', obj);
         isCheckedUpdate(false)
     }
 
