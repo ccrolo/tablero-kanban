@@ -26,9 +26,6 @@
 }
 
 
-
-
-
 .pending_icon{
    width: 25px;
    height: 25px;    
@@ -39,5 +36,7 @@
     position: absolute;
     right: 1rem;
     padding: 1rem;
+    border: none;
+    background-color: white;
 }
 
