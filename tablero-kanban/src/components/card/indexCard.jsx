@@ -6,17 +6,15 @@ import { useEffect } from 'react';
 
 
 
-function Card() {
+function Card(props) {
 
-    let [IntroduceText, IntroduceTextUpdate] = useState('');
+    // let [IntroduceText, IntroduceTextUpdate] = useState('');
 
 
-    useEffect(() => {
-        IntroduceTextUpdate(localStorage.getItem('text'))
-        
-
-    }, [])
-    console.log(IntroduceText)
+    // useEffect(() => {
+    //     IntroduceTextUpdate(localStorage.getItem('text'))
+    // }, [])
+    // console.log(IntroduceText)
 
     return (
 
@@ -24,7 +22,7 @@ function Card() {
             <div className='card_title'>
                 <img className='pending_icon' src={pending} alt="imagen de pending" />
                 
-                <h4 >{IntroduceText}</h4>
+                <h4 >{props.task}</h4>
                 <p className='delete'>🗑️</p>
                 
             </div>

@@ -1,0 +1,12 @@
+.column_container{
+    display: flex;
+    flex-direction: column;
+    width: 500px;
+    height: 100vH;
+    background-color: #f6f8fa;
+    border-radius: 5px;
+    border: 1px solid rgba(27,31,35,0.15);
+    align-items: center;
+    overflow-y: scroll;
+
+}
