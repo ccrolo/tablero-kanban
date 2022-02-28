@@ -41,6 +41,8 @@ function Button() {
             hour: hour.toString()
         }
         
+        
+
         counterUpdate(e => e + 1)
         /*  console.log(counter.length) */
         updateCardsState([...cardsState, obj])
