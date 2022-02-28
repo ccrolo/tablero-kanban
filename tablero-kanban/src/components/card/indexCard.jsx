@@ -9,18 +9,26 @@ function Card(props) {
     const { cardsState, updateCardsState } = useContext(CardsContext);
     let [arrayId, arrayIdUpdate] = useState(cardsState.map(e => e.id)) //sabiamos que esto era una gitanada
     //Hacer find index para encontrar la id y nos da la posicion ==> esta es la buena
-      
+ 
+   console.log(cardsState)
+
+
     const handleDelete = () => {
-       
+
         const position = arrayId.indexOf(props.id)
         cardsState.splice(position, 1)
         updateCardsState([...cardsState])
+        
 
         console.log(cardsState)
 
-       /*  updateCardsState(cardsState.splice(position,1))
-        arrayIdUpdate(arrayId.splice(position,1)) */
+        /*  updateCardsState(cardsState.splice(position,1))
+         arrayIdUpdate(arrayId.splice(position,1)) */
     }
+
+
+   
+
 
     return (
 
@@ -32,7 +40,7 @@ function Card(props) {
                 <button onClick={handleDelete} className='delete'>🗑️</button>
 
             </div>
-            <p>#23 created on 30/7/2022 8:34:54</p>
+            <p>#{props.id} created on {props.date} {props.hour}</p>
         </div>
 
     )

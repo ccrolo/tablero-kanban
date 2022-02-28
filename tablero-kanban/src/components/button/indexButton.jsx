@@ -9,13 +9,13 @@ import CardsContext from '../context/indexContext'
 
 function Button() {
 
-    const {cardsState, updateCardsState} = useContext(CardsContext)
-    
+    const { cardsState, updateCardsState } = useContext(CardsContext)
+
     let [isChecked, isCheckedUpdate] = useState(false)
     let [isDisabled, isDisabledUpdate] = useState(true)
-    let [ counter, counterUpdate] = useState([])
-    
-    
+    let [counter, counterUpdate] = useState([])
+
+
     const handle = () => {
         isCheckedUpdate(true)
         isDisabledUpdate(true)
@@ -25,19 +25,28 @@ function Button() {
         isDisabledUpdate(false)
     }
 
+    const date = new Date();
+    const hour = date.getHours() + ':' + date.getMinutes() + ':' + date.getSeconds();
+    
+
     const handleSubmit = e => {
         e.preventDefault()
-       
+
+
+
         let obj = {
             text: e.target.textarea.value,
-            id: counter.length + 1
+            id: counter.length + 1,
+            date: date.toLocaleDateString(),
+            hour: hour.toString()
         }
-        counterUpdate(e => e+1)
-       /*  console.log(counter.length) */
-        updateCardsState([...cardsState,obj])
+        
+        counterUpdate(e => e + 1)
+        /*  console.log(counter.length) */
+        updateCardsState([...cardsState, obj])
         isCheckedUpdate(false)
     }
-
+    
     return (
 
 
