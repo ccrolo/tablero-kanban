@@ -9,7 +9,7 @@ function App() {
   return (
     <React.Fragment>
       <CardsProvider>
-        <Filter></Filter>
+       
         <Landing></Landing>
       </CardsProvider>
     </React.Fragment>

@@ -3,6 +3,8 @@ import React from "react"
 import Column from "../../components/columnToDo/indexColumn"
 import ColumnDone from '../../components/columnDone/indexDone';
 import ColumnProgress from '../../components/columnInProges/indexProgres';
+import Header from '../../components/header/indexHeader';
+import Filter from '../../components/filter/indexFilter';
 
 
 // 1. La primera columna deberá añadr las tareas:
@@ -27,10 +29,12 @@ import ColumnProgress from '../../components/columnInProges/indexProgres';
 function Landing() {
     return (
         <React.Fragment>
+            <Header />
+            <Filter />
             <div className="landing_container">
-                <Column/>
-                <ColumnProgress/>
-                <ColumnDone/>
+                <Column />
+                <ColumnProgress />
+                <ColumnDone />
             </div>
         </React.Fragment>
     )
