@@ -1,5 +1,6 @@
 import './styleCard.css'
 import pending from '../../assets/icono-verde.png'
+import done from '../../assets/icono-rojo.png'
 import { useContext, useState } from 'react';
 import CardsContext from '../context/indexContext'
 
@@ -28,13 +29,18 @@ function Card(props) {
 
 
    
-
+console.log(props.checked)
 
     return (
 
         <div className="card_container">
             <div className='card_title'>
-                <img className='pending_icon' src={pending} alt="imagen de pending" />
+                {
+                    props.checked===false?
+                    <img className='pending_icon' src={pending} alt="imagen de pending" />
+                    : <img className='done_icon' src={done} alt="imagen de done" />
+                }
+                
 
                 <h4 >{props.task}</h4>
                 <button onClick={handleDelete} className='delete'>🗑️</button>

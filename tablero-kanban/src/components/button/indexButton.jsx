@@ -7,7 +7,7 @@ import CardsContext from '../context/indexContext'
 // Hay que hacer que cuando no haya texto en el text area el boton verde esté deshabilitado y además con opacidad 0.7.
 
 
-function Button() {
+function Button(props) {
 
     const { cardsState, updateCardsState } = useContext(CardsContext)
 
@@ -27,7 +27,7 @@ function Button() {
 
     const date = new Date();
     const hour = date.getHours() + ':' + date.getMinutes() + ':' + date.getSeconds();
-    
+    console.log(date)
 
     const handleSubmit = e => {
         e.preventDefault()
@@ -38,8 +38,11 @@ function Button() {
             text: e.target.textarea.value,
             id: counter.length + 1,
             date: date.toLocaleDateString(),
-            hour: hour.toString()
+            hour: hour.toString(),
+            checked: props.checked
+
         }
+        
         
         
 

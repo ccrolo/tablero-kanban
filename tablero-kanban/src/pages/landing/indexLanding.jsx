@@ -2,7 +2,7 @@ import './styleLanding.css'
 import React from "react"
 import Column from "../../components/columnToDo/indexColumn"
 import ColumnDone from '../../components/columnDone/indexDone';
-import ColumnProgres from '../../components/columnInProges/indexProgres';
+import ColumnProgress from '../../components/columnInProges/indexProgres';
 
 
 // 1. La primera columna deberá añadr las tareas:
@@ -29,8 +29,8 @@ function Landing() {
         <React.Fragment>
             <div className="landing_container">
                 <Column/>
-                {/* <ColumnDone/>
-                <ColumnProgres></ColumnProgres> */}
+                {/* <ColumnProgress/>
+                <ColumnDone/> */}
             </div>
         </React.Fragment>
     )
