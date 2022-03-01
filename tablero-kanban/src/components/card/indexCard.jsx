@@ -29,14 +29,14 @@ function Card(props) {
 
 
    
-console.log(props.checked)
+console.log(props.status)
 
     return (
 
         <div className="card_container">
             <div className='card_title'>
                 {
-                    props.checked===false?
+                    props.status==='ToDo'||props.status==='InProgress'?
                     <img className='pending_icon' src={pending} alt="imagen de pending" />
                     : <img className='done_icon' src={done} alt="imagen de done" />
                 }

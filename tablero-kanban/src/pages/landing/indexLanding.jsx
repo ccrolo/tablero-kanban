@@ -29,8 +29,8 @@ function Landing() {
         <React.Fragment>
             <div className="landing_container">
                 <Column/>
-                {/* <ColumnProgress/>
-                <ColumnDone/> */}
+                <ColumnProgress/>
+                <ColumnDone/>
             </div>
         </React.Fragment>
     )

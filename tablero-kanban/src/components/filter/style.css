@@ -1,0 +1,28 @@
+.filter__container {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+.filter__info {
+    padding-top: 20px;
+    padding-left: 35px;
+}
+.filter__info1 {
+    color: #2e3236;
+    font-weight: bold;
+}
+.filter__info2 {
+    color: #898b8d;
+    margin-top: 10px;
+}
+.filter__filter {
+    margin-top: 45px;
+    margin-right: 100px;
+    width: 350px;
+    height: 30px;
+    border-radius: 5px;
+    border-color: #898b8d;
+    padding-left: 20px;
+}
+
+

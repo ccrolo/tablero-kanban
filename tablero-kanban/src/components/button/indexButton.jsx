@@ -32,22 +32,14 @@ function Button(props) {
     const handleSubmit = e => {
         e.preventDefault()
 
-
-
         let obj = {
             text: e.target.textarea.value,
             id: counter.length + 1,
             date: date.toLocaleDateString(),
             hour: hour.toString(),
-            checked: props.checked
-
+            status: props.status
         }
-        
-        
-        
-
         counterUpdate(e => e + 1)
-        /*  console.log(counter.length) */
         updateCardsState([...cardsState, obj])
         isCheckedUpdate(false)
     }
