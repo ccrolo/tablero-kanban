@@ -14,7 +14,7 @@ function ColumnProgress() {
         <div className="column_container">
 
             <div className='column_name' >
-                <div className='div_counter'>{cardsState.length}</div>
+                <div className='div_counter'>{progressArr.length}</div>
                 <h3>In Progress</h3>
             </div>
             <Button status={status}></Button>

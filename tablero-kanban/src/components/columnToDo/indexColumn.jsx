@@ -16,7 +16,7 @@ function Column() {
         <div className="column_container">
 
             <div className='column_name' >
-                <div className='div_counter'>{cardsState.length}</div>
+                <div className='div_counter'>{toDoArr.length}</div>
                 <h3>To Do</h3>
             </div>
             <Button status={status}></Button>
