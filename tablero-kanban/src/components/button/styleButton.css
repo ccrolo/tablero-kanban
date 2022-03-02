@@ -38,6 +38,6 @@
 
 }
 
-.add_button-disabled{
+.add_button:disabled{
     opacity: 0.7;
 }
