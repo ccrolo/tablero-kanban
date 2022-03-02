@@ -29,7 +29,7 @@ import Card from '../../components/card/indexCard';
 // - El filtro no borra  OK!!!
 // - el filtro debe funcionar al borrar la palabra
 // - La basura borra mal --> del mismo array  OK!!!
-// - Cuando le das a cancelar suma una Card
+// - Cuando le das a cancelar suma una Card OK!!!
 // - Boton + --> Mal posicionado (cambiar)
 // - Falta colocar fecha en 'texto 2'
 // - Falta guardarlo en el local
@@ -44,8 +44,8 @@ function Landing() {
             <Filter />
             <div className="landing_container">
                 <Column />
-                <ColumnProgress />
-                {/* <ColumnDone /> */}
+                {/* <ColumnProgress /> */}
+                <ColumnDone />
             </div>
         </React.Fragment>
     )
