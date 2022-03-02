@@ -3,7 +3,8 @@ import { useContext } from 'react'
 import CardsContext from '../context/indexContext'
 
 function Filter(){
-    const { cardsState, updateCardsState } = useContext(CardsContext)
+    const [{ cardsState, updateCardsState },{counter, counterUpdate}] = useContext(CardsContext)
+    // const { cardsState, updateCardsState } = useContext(CardsContext)
 
     const handleFilter = e => {
         console.log(cardsState)
