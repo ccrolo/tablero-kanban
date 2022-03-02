@@ -53,10 +53,11 @@ function Button(props) {
                 ? <form onSubmit={handleSubmit}>
                     <textarea onKeyUp={handleKeyPress} placeholder='Enter a note' className='text_area' type='textarea' name='textarea' ></textarea>
                     <section>
-                        {isDisabled
+                        <button disabled={isDisabled}type='submit' className='button_text_area add_button'>Add</button>
+                        {/* {isDisabled
                             ? <button disabled={true} type='submit' className='button_text_area add_button add_button-disabled'>Add</button>
-                            : <button type='submit' className='button_text_area add_button'>Add</button>}
-                        <button type='submit' className='button_text_area cancel_button'>Cancel</button>
+                            : <button type='submit' className='button_text_area add_button'>Add</button>} */}
+                        <button onClick={() => {}} type='button' className='button_text_area cancel_button'>Cancel</button>
                     </section>
                 </form>
                 : ''}
