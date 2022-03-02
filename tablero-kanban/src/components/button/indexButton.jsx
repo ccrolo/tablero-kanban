@@ -9,7 +9,7 @@ import CardsContext from '../context/indexContext'
 
 function Button(props) {
 
-    const [{ cardsState, updateCardsState }, { counter, counterUpdate },{cardsFilter, updateCardsFilter}] = useContext(CardsContext)
+    const [{ cardsState, updateCardsState }, { counter, counterUpdate }] = useContext(CardsContext)
 
     let [isChecked, isCheckedUpdate] = useState(false)
     let [isDisabled, isDisabledUpdate] = useState(true)
@@ -38,7 +38,7 @@ function Button(props) {
             status: props.status
         }
         counterUpdate(e => e + 1)
-        updateCardsFilter([...cardsFilter, obj])
+        updateCardsState([...cardsState, obj])
         isCheckedUpdate(false)
         console.log(counter.length)
     }
@@ -49,8 +49,6 @@ function Button(props) {
     }
 
     return (
-
-
         <React.Fragment>
             <button className="button" onClick={handle}>➕</button>
             {isChecked
@@ -58,13 +56,12 @@ function Button(props) {
                     <textarea onKeyUp={handleKeyPress} placeholder='Enter a note' className='text_area' type='textarea' name='textarea' ></textarea>
                     <section>
                         <button disabled={isDisabled} type='submit' className='button_text_area add_button'>Add</button>
-
                         <button onClick={handleCancel} type='button' className='button_text_area cancel_button'>Cancel</button>
                     </section>
                 </form>
                 : ''}
-        </React.Fragment>)
-
+        </React.Fragment>
+    )
 }
 
 export default Button;

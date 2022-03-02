@@ -3,13 +3,11 @@ import { useContext } from 'react'
 import CardsContext from '../context/indexContext'
 
 function Filter(){
-    const [{ cardsState, updateCardsState },{counter, counterUpdate},{cardsFilter, updateCardsFilter}] = useContext(CardsContext)
-    // const { cardsState, updateCardsState } = useContext(CardsContext)
+    const [{ cardsState, updateCardsState },{counter, counterUpdate}] = useContext(CardsContext)
 
     const handleFilter = e => {
         console.log(cardsState)
-        
-        const filteredCard = cardsFilter.filter(c => c.text.toLowerCase().includes(e.target.value.toLowerCase()))
+        const filteredCard = cardsState.filter(c => c.text.toLowerCase().includes(e.target.value.toLowerCase()))
         updateCardsState(filteredCard)
     }
 
@@ -28,7 +26,5 @@ function Filter(){
 }
 
 export default Filter;
-
-
 
 
