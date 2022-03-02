@@ -8,10 +8,9 @@ import CardsContext from '../context/indexContext'
 
 function Card(props) {
     const [{ cardsState, updateCardsState },{counter, counterUpdate}] = useContext(CardsContext)
-    // const { cardsState, updateCardsState } = useContext(CardsContext);
     
     const handleDelete = () => {
-        const position = cardsState.findIndex(e => e===props.id)
+        const position = cardsState.findIndex(e => e.id===props.id)
         cardsState.splice(position, 1)
         updateCardsState([...cardsState])
     }
