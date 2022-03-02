@@ -9,7 +9,7 @@ import CardsContext from '../context/indexContext'
 
 function Button(props) {
 
-    const [{ cardsState, updateCardsState },{counter, counterUpdate}] = useContext(CardsContext)
+    const [{ cardsState, updateCardsState }, { counter, counterUpdate },{cardsFilter, updateCardsFilter}] = useContext(CardsContext)
 
     let [isChecked, isCheckedUpdate] = useState(false)
     let [isDisabled, isDisabledUpdate] = useState(true)
@@ -38,11 +38,16 @@ function Button(props) {
             status: props.status
         }
         counterUpdate(e => e + 1)
-        updateCardsState([...cardsState, obj])
+        updateCardsFilter([...cardsFilter, obj])
         isCheckedUpdate(false)
         console.log(counter.length)
     }
-    
+
+    const handleCancel = c => {
+        isCheckedUpdate(false)
+        isDisabledUpdate(false)
+    }
+
     return (
 
 
@@ -52,11 +57,9 @@ function Button(props) {
                 ? <form onSubmit={handleSubmit}>
                     <textarea onKeyUp={handleKeyPress} placeholder='Enter a note' className='text_area' type='textarea' name='textarea' ></textarea>
                     <section>
-                        <button disabled={isDisabled}type='submit' className='button_text_area add_button'>Add</button>
-                        {/* {isDisabled
-                            ? <button disabled={true} type='submit' className='button_text_area add_button add_button-disabled'>Add</button>
-                            : <button type='submit' className='button_text_area add_button'>Add</button>} */}
-                        <button onClick={() => {}} type='button' className='button_text_area cancel_button'>Cancel</button>
+                        <button disabled={isDisabled} type='submit' className='button_text_area add_button'>Add</button>
+
+                        <button onClick={handleCancel} type='button' className='button_text_area cancel_button'>Cancel</button>
                     </section>
                 </form>
                 : ''}
