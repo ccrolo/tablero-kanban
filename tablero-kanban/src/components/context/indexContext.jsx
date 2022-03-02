@@ -7,19 +7,13 @@ const CardsContext = createContext();
 // Este es el componeten wrapper que expone funciones de actualización
 function CardsProvider({ children }) {
 
-    
-
-    const [cardsFilter, updateCardsFilter] = useState([]);
-    const [cardsState, updateCardsState] = useState([cardsFilter]);
+    const [cardsState, updateCardsState] = useState([]);
     const [counter, counterUpdate] = useState([]);
-    const [doneArr, updateDoneArr] = useState([])
-    
-
-    
+ 
     return (
         <React.Fragment>
 
-            <CardsContext.Provider value={[{cardsState, updateCardsState},{counter, counterUpdate},{doneArr, updateDoneArr},{cardsFilter, updateCardsFilter}]}>
+            <CardsContext.Provider value={[{cardsState, updateCardsState},{counter, counterUpdate}]}>
                 {children}
             </CardsContext.Provider>
 
