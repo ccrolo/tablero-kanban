@@ -5,6 +5,7 @@ import ColumnDone from '../../components/columnDone/indexDone';
 import ColumnProgress from '../../components/columnInProges/indexProgres';
 import Header from '../../components/header/indexHeader';
 import Filter from '../../components/filter/indexFilter';
+import Card from '../../components/card/indexCard';
 
 
 // 1. La primera columna deberá añadr las tareas:
@@ -22,6 +23,15 @@ import Filter from '../../components/filter/indexFilter';
 // - Eliminará de la segunda y cambiará el icono.
 // - Tendrá un clear all
 // - Las Tareas se pueden eliminar de forma individual
+
+
+// Que falta:
+// - El filtro no borra
+// - La basura borra mal --> del mismo array
+// - Cuando le das a cancelar suma una Card
+// - Boton + --> Mal posicionado (cambiar)
+// - Falta colocar fecha en 'texto 2'
+// - Falta guardarlo en el local
 
 
 
