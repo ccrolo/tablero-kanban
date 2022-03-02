@@ -5,7 +5,8 @@ import { useContext } from 'react'
 import CardsContext from '../context/indexContext'
 
 function Column() {
-    const { cardsState, updateCardsState } = useContext(CardsContext)
+    const [{ cardsState, updateCardsState },{counter, counterUpdate}] = useContext(CardsContext)
+    // const { cardsState, updateCardsState } = useContext(CardsContext)
     /*  console.log(cardsState) */
     localStorage.setItem('arrayCards', cardsState);
     const status = 'ToDo';

@@ -9,12 +9,11 @@ import CardsContext from '../context/indexContext'
 
 function Button(props) {
 
-    const { cardsState, updateCardsState } = useContext(CardsContext)
+    const [{ cardsState, updateCardsState },{counter, counterUpdate}] = useContext(CardsContext)
 
     let [isChecked, isCheckedUpdate] = useState(false)
     let [isDisabled, isDisabledUpdate] = useState(true)
-    let [counter, counterUpdate] = useState([])
-
+    // let [counter, counterUpdate] = useState([])
 
     const handle = () => {
         isCheckedUpdate(true)
@@ -27,7 +26,6 @@ function Button(props) {
 
     const date = new Date();
     const hour = date.getHours() + ':' + date.getMinutes() + ':' + date.getSeconds();
-    console.log(date)
 
     const handleSubmit = e => {
         e.preventDefault()
@@ -42,6 +40,7 @@ function Button(props) {
         counterUpdate(e => e + 1)
         updateCardsState([...cardsState, obj])
         isCheckedUpdate(false)
+        console.log(counter.length)
     }
     
     return (

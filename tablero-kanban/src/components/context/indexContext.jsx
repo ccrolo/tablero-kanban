@@ -8,11 +8,13 @@ const CardsContext = createContext();
 function CardsProvider({ children }) {
 
     const [cardsState, updateCardsState] = useState([]);
+    const [counter, counterUpdate] = useState([])
+
     
     return (
         <React.Fragment>
 
-            <CardsContext.Provider value={{ cardsState, updateCardsState }}>
+            <CardsContext.Provider value={[{cardsState, updateCardsState},{counter, counterUpdate}]}>
                 {children}
             </CardsContext.Provider>
 
