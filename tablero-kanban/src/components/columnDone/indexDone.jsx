@@ -18,15 +18,14 @@ function ColumnProgress(props) {
     }
     return (
         <div className="column_container">
-            <div className='header__container'>
+           
                 <div className='column_name' >
                     <div className='div_counter'>{doneArr.length}</div>
                     <h3>Done</h3>
+                    <button className="button_clear" onClick={handleClearAll}>Clear all</button>
                 </div>
-                <button className="button" onClick={handleClearAll}>Clear all</button>
-                <Button status={status}></Button>
-            </div>
-
+               
+            <Button status={status}></Button>
             {doneArr.map((e, i) => <Card key={i} status={e.status} id={e.id} date={e.date} hour={e.hour} task={e.text}></Card>)}
         </div>
     )
