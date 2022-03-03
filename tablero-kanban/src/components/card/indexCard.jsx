@@ -7,13 +7,16 @@ import CardsContext from '../context/indexContext'
 
 
 function Card(props) {
-    const [{ cardsState, updateCardsState },{counter, counterUpdate},{cardsStateFilter, updateCardsStateFilter}] = useContext(CardsContext)
+    const [{ cardsState, updateCardsState },{counter, counterUpdate},{cardsStateFilter, updateCardsStateFilter},{file, updateFile}] = useContext(CardsContext)
     
     const handleDelete = () => {
         const position = cardsStateFilter.findIndex(e => e.id===props.id)
         cardsStateFilter.splice(position, 1)
-        updateCardsState([...cardsStateFilter])
+        cardsState.splice(position, 1)
+        file.splice(position, 1)
+        updateCardsState([...cardsState])
         updateCardsStateFilter([...cardsStateFilter])
+        updateFile([...file])
     }
 
     return (
@@ -25,11 +28,8 @@ function Card(props) {
                     <img className='pending_icon' src={pending} alt="imagen de pending" />
                     : <img className='done_icon' src={done} alt="imagen de done" />
                 }
-                
-
                 <h4 >{props.task}</h4>
                 <button onClick={handleDelete} className='delete'>🗑️</button>
-
             </div>
             <p>#{props.id} created on {props.date} {props.hour}</p>
         </div>

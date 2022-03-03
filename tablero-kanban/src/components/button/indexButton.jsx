@@ -10,11 +10,10 @@ import CardsContext from '../context/indexContext'
 function Button(props) {
 
     const [{ cardsState, updateCardsState }, { counter, counterUpdate },{cardsStateFilter, updateCardsStateFilter},{file, updateFile}] = useContext(CardsContext)
-
+    
     let [isChecked, isCheckedUpdate] = useState(false)
     let [isDisabled, isDisabledUpdate] = useState(true)
-    // let [counter, counterUpdate] = useState([])
-
+    
     const handle = () => {
         isCheckedUpdate(true)
         isDisabledUpdate(true)
@@ -41,7 +40,6 @@ function Button(props) {
         updateCardsStateFilter([...cardsState, obj])
         updateCardsState([...cardsState, obj])
         updateFile([...cardsState, obj])
-        localStorage.setItem('file',JSON.stringify(file))
         isCheckedUpdate(false)
         
         console.log(counter.length)

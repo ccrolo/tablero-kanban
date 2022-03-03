@@ -6,6 +6,8 @@ import ColumnProgress from '../../components/columnInProges/indexProgres';
 import Header from '../../components/header/indexHeader';
 import Filter from '../../components/filter/indexFilter';
 import Card from '../../components/card/indexCard';
+import { useContext, useState } from 'react';
+import CardsContext from '../../components/context/indexContext';
 
 
 // 1. La primera columna deberá añadr las tareas:
@@ -27,24 +29,28 @@ import Card from '../../components/card/indexCard';
 
 // Que falta:
 // - El filtro no borra  OK!!!
-// - el filtro debe funcionar al borrar la palabra
+// - el filtro debe funcionar al borrar la palabra OK!!!!!!!
 // - La basura borra mal --> del mismo array  OK!!!
 // - Cuando le das a cancelar suma una Card OK!!!
-// - Boton + --> Mal posicionado (cambiar)
-// - Falta colocar fecha en 'texto 2'
-// - Falta guardarlo en el local
+// - Boton + --> Mal posicionado (cambiar) 
+// - Falta colocar fecha en 'texto 2' 
+// - Falta guardarlo en el local  A MEDIAS
 
 
 
 
 function Landing() {
+    const [{ cardsState, updateCardsState },{counter, counterUpdate},{cardsStateFilter, updateCardsStateFilter},{file, updateFile}] = useContext(CardsContext)
+    const local = JSON.parse(localStorage.getItem('file')) ?? [];
+    const cont = JSON.parse(localStorage.getItem('counter')) ?? [];
+
     return (
         <React.Fragment>
             <Header />
             <Filter />
             <div className="landing_container">
                 <Column />
-                {/* <ColumnProgress /> */}
+                <ColumnProgress/>
                 <ColumnDone />
             </div>
         </React.Fragment>
