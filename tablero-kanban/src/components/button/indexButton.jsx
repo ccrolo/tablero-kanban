@@ -9,7 +9,7 @@ import CardsContext from '../context/indexContext'
 
 function Button(props) {
 
-    const [{ cardsState, updateCardsState }, { counter, counterUpdate }] = useContext(CardsContext)
+    const [{ cardsState, updateCardsState }, { counter, counterUpdate },{cardsStateFilter, updateCardsStateFilter}] = useContext(CardsContext)
 
     let [isChecked, isCheckedUpdate] = useState(false)
     let [isDisabled, isDisabledUpdate] = useState(true)
@@ -38,8 +38,10 @@ function Button(props) {
             status: props.status
         }
         counterUpdate(e => e + 1)
+        updateCardsStateFilter([...cardsState, obj])
         updateCardsState([...cardsState, obj])
         isCheckedUpdate(false)
+        
         console.log(counter.length)
     }
 

@@ -3,12 +3,13 @@ import { useContext } from 'react'
 import CardsContext from '../context/indexContext'
 
 function Filter(){
-    const [{ cardsState, updateCardsState },{counter, counterUpdate}] = useContext(CardsContext)
+    let [{ cardsState, updateCardsState },{counter, counterUpdate},{cardsStateFilter, updateCardsStateFilter}] = useContext(CardsContext)
 
     const handleFilter = e => {
-        console.log(cardsState)
-        const filteredCard = cardsState.filter(c => c.text.toLowerCase().includes(e.target.value.toLowerCase()))
-        updateCardsState(filteredCard)
+        console.log(cardsStateFilter)
+        const filterAll = e.target.value.toLowerCase()
+        const filteredCard = cardsState.filter(c => c.text.toLowerCase().includes(filterAll))
+        updateCardsStateFilter(filteredCard)
     }
 
     return(
@@ -19,7 +20,7 @@ function Filter(){
             </div>
             <div className='filter__div__container'>
                 <label  className='lupa' htmlFor="">🔍</label>
-                <input type="text" className="filter__filter" placeholder="Search" onKeyUp={handleFilter}/>
+                <input type="input" className="filter__filter" placeholder="Search" onChange={handleFilter}/>
             </div>
         </main>
     )

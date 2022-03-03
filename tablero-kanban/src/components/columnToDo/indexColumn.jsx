@@ -5,11 +5,11 @@ import { useContext } from 'react'
 import CardsContext from '../context/indexContext'
 
 function Column() {
-    const [{ cardsState, updateCardsState },{counter, counterUpdate}] = useContext(CardsContext)
+    const [{ cardsState, updateCardsState },{counter, counterUpdate},{cardsStateFilter, updateCardsStateFilter}] = useContext(CardsContext)
     
-    localStorage.setItem('arrayCards', cardsState);
+    
     const status = 'ToDo';
-    let toDoArr = cardsState.filter(e => e.status === 'ToDo');
+    let toDoArr = cardsStateFilter.filter(e => e.status === 'ToDo');
 
     return (
         <div className="column_container">
