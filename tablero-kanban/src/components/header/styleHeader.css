@@ -1,0 +1,18 @@
+.header_container{
+    display: flex;
+    width: 100vw;
+    height: 6rem;
+    background-color: #24292e;
+    color: white;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+}
+
+.neoland_logo {
+    width: 4rem;
+    height: 4rem;
+    left: 2rem;
+    position: absolute;
+    
+}

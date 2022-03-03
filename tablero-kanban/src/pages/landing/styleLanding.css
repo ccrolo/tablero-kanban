@@ -1,0 +1,7 @@
+.landing_container{
+    display: flex;
+    justify-content: space-evenly;
+    width: 100vw;
+    height: 100%;
+    
+}
