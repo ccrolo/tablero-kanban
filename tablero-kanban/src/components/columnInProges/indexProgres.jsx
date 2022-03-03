@@ -5,11 +5,11 @@ import { useContext } from 'react'
 import CardsContext from '../context/indexContext'
 
 function ColumnProgress() {
-    const [{ cardsState, updateCardsState },{counter, counterUpdate}] = useContext(CardsContext)
+    const [{ cardsState, updateCardsState },{counter, counterUpdate},{cardsStateFilter, updateCardsStateFilter}] = useContext(CardsContext)
     // const { cardsState, updateCardsState } = useContext(CardsContext)
-    localStorage.setItem('arrayCards', cardsState);
+   
     const status = 'InProgress';
-    let progressArr = cardsState.filter(e => e.status === 'InProgress');
+    let progressArr = cardsStateFilter.filter(e => e.status === 'InProgress');
 
     return (
         <div className="column_container">

@@ -4,13 +4,18 @@ import Button from "../button/indexButton"
 import { useContext, useState } from 'react'
 import CardsContext from '../context/indexContext'
 
-function ColumnProgress() {
-    const [{ cardsState, updateCardsState },{counter, counterUpdate}] = useContext(CardsContext)
+function ColumnProgress(props) {
+    const [{ cardsState, updateCardsState },{counter, counterUpdate},{cardsStateFilter, updateCardsStateFilter}] = useContext(CardsContext)
     const status = 'Done';
-    let doneArr = cardsState.filter(e => e.status === 'Done')
+    let doneArr = cardsStateFilter.filter(e => e.status === 'Done')
     // const [doneArr, updateDoneArr] = useState([])
     /* updateDoneArr(cardsState.filter(e => e.status === 'Done'))  */
     const handleClearAll = () => {
+        
+        
+        cardsState.splice(0, doneArr.length)
+        updateCardsState([...cardsState])
+       
         /* doneArr = [] */
         /* doneArr.splice(0, doneArr.length)
         updateDoneArr([...doneArr]) */
