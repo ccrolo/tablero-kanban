@@ -37,3 +37,8 @@
     left: 1.5rem;
     top: 1.3rem;
 }
+
+.header__container{
+    display: flex;
+    flex-direction: row;
+}

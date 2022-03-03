@@ -6,13 +6,17 @@ const CardsContext = createContext();
 
 // Este es el componeten wrapper que expone funciones de actualización
 function CardsProvider({ children }) {
+
     const local = JSON.parse(localStorage.getItem('file')) ?? [];
+    const cont = JSON.parse(localStorage.getItem('counter')) ?? [];
 
     const [cardsState, updateCardsState] = useState(local);
-    const [counter, counterUpdate] = useState([]);
-    const [cardsStateFilter, updateCardsStateFilter] = useState([]);
-    const [file, updateFile] = useState([])
+    const [counter, counterUpdate] = useState(cont);
+    const [cardsStateFilter, updateCardsStateFilter] = useState(local);
+    const [file, updateFile] = useState(local)
     
+    // localStorage.setItem('file',JSON.stringify(file))
+    // localStorage.setItem('counter',JSON.stringify(counter))
  
     return (
         <React.Fragment>
@@ -28,3 +32,4 @@ function CardsProvider({ children }) {
 export default CardsContext;
 
 export { CardsProvider };
+
