@@ -8,10 +8,7 @@ function ColumnProgress(props) {
     const [{ cardsState, updateCardsState }, { counter, counterUpdate }, { cardsStateFilter, updateCardsStateFilter }, { file, updateFile }] = useContext(CardsContext)
     const status = 'Done';
     let doneArr = cardsStateFilter.filter(e => e.status === 'Done')
-    if(doneArr.length===0||file!==0){
-        doneArr=cardsStateFilter.filter(e => e.status === 'Done')
-    }
-
+   
     const handleClearAll = () => {
 
         updateCardsState(cardsState.filter(e => e.status !== 'Done'))

@@ -9,9 +9,7 @@ function ColumnProgress() {
    
     const status = 'InProgress';
     let progressArr = cardsStateFilter.filter(e => e.status === 'InProgress');
-    if(progressArr.length===0||file!==0){
-        progressArr=cardsStateFilter.filter(e => e.status === 'InProgress')
-    }
+    
     return (
         <div className="column_container">
 

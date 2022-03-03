@@ -11,10 +11,7 @@ function Column() {
     
     const status = 'ToDo';
     let toDoArr = cardsStateFilter.filter(e => e.status === 'ToDo');
-    if(toDoArr.length===0||file!==0){
-        toDoArr=cardsStateFilter.filter(e => e.status === 'ToDo')
-    }
-
+   
     return (
         <div className="column_container">
             <div className='column_name' >

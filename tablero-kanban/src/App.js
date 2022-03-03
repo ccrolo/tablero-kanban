@@ -9,7 +9,6 @@ function App() {
   return (
     <React.Fragment>
       <CardsProvider>
-       
         <Landing></Landing>
       </CardsProvider>
     </React.Fragment>

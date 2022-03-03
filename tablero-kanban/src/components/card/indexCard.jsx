@@ -12,11 +12,9 @@ function Card(props) {
     const handleDelete = () => {
         const position = cardsStateFilter.findIndex(e => e.id===props.id)
         cardsStateFilter.splice(position, 1)
-        cardsState.splice(position, 1)
-        file.splice(position, 1)
-        updateCardsState([...cardsState])
+        updateCardsState([...cardsStateFilter])
         updateCardsStateFilter([...cardsStateFilter])
-        updateFile([...file])
+        updateFile([...cardsStateFilter])
     }
 
     return (

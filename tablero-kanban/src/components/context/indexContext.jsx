@@ -12,7 +12,7 @@ function CardsProvider({ children }) {
 
     const [cardsState, updateCardsState] = useState(local);
     const [counter, counterUpdate] = useState(cont);
-    const [cardsStateFilter, updateCardsStateFilter] = useState([]);
+    const [cardsStateFilter, updateCardsStateFilter] = useState(local);
     const [file, updateFile] = useState(local)
     
     // localStorage.setItem('file',JSON.stringify(file))
