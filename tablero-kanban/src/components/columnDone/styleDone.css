@@ -31,8 +31,9 @@
 
 .column_name{
     display: flex;
+    flex-direction: row;
     gap: 1rem;
-    align-items: center;
+    align-items: left;
     position: absolute;
     left: 1.5rem;
     top: 1.3rem;
@@ -41,4 +42,10 @@
 .header__container{
     display: flex;
     flex-direction: row;
+}
+.button_clear{
+    border: none;
+    background-color: #f6f8fa;
+    margin-left: 60px;
+    margin-top: 5px;
 }
