@@ -5,20 +5,16 @@ import { useContext, useState } from 'react'
 import CardsContext from '../context/indexContext'
 
 function ColumnProgress(props) {
-    const [{ cardsState, updateCardsState },{counter, counterUpdate},{cardsStateFilter, updateCardsStateFilter}] = useContext(CardsContext)
+    const [{ cardsState, updateCardsState }, { counter, counterUpdate }, { cardsStateFilter, updateCardsStateFilter },{file, updateFile}] = useContext(CardsContext)
     const status = 'Done';
     let doneArr = cardsStateFilter.filter(e => e.status === 'Done')
-    // const [doneArr, updateDoneArr] = useState([])
-    /* updateDoneArr(cardsState.filter(e => e.status === 'Done'))  */
+
     const handleClearAll = () => {
-        
-        
-        cardsState.splice(0, doneArr.length)
-        updateCardsState([...cardsState])
-       
-        /* doneArr = [] */
-        /* doneArr.splice(0, doneArr.length)
-        updateDoneArr([...doneArr]) */
+
+        updateCardsState(cardsState.filter(e => e.status !== 'Done'))
+        updateCardsStateFilter(cardsStateFilter.filter(e => e.status !== 'Done'))
+        updateFile(file.filter(e => e.status !== 'Done'))
+
     }
     return (
         <div className="column_container">
